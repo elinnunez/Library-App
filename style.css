@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    border: 1px solid green;
+}
+
+header {
+    display: flex;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid purple;
+}
+
+.add-book {
+    align-self: flex-end;
+    margin: 5px;
+}
+
+.lib-grid {
+    display: grid;
+    border: 1px solid red;
+}
