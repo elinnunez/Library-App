@@ -2,8 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    height: 100vh;
-    width: 100%;
     border: 1px solid green;
 }
 
@@ -19,7 +17,6 @@ header {
     display: flex;
     flex-direction: column;
     border: 1px solid purple;
-    width: 100%;
 }
 
 .add-book {
@@ -30,9 +27,10 @@ header {
 .lib-grid {
     display: grid;
     border: 1px solid red;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
     grid-gap: 1rem;
+    padding: 1rem;
 }
 
 .book-card {
@@ -41,3 +39,7 @@ header {
     padding: .5rem;
     background: rgb(236, 226, 226)
 }
+
+@media (min-width: 900px) {
+    .lib-grid { grid-template-columns: repeat(4, 1fr); }
+  }
