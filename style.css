@@ -11,6 +11,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: rgb(146, 185, 230);
 }
 
 .container {
@@ -38,6 +39,22 @@ header {
     border-radius: 3px;
     padding: .5rem;
     background: rgb(236, 226, 226)
+}
+
+/* .book-title { 
+    
+} */
+
+.add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(188, 211, 245);
+    border-radius: 3px;
+    padding: .5rem;
+    background: rgb(205, 243, 225);
+    text-align: center;
+    font-size: 50px;
 }
 
 @media (min-width: 900px) {

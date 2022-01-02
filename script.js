@@ -64,9 +64,9 @@ let book6 = new Book();
 library.addBook(book1);
 library.addBook(book2);
 library.addBook(book3);
-library.addBook(book4);
+// library.addBook(book4);
 library.addBook(book5);
-library.addBook(book6);
+// library.addBook(book6);
 
 console.log(library.returnLib());
 console.log(library)
@@ -76,6 +76,7 @@ console.log(library)
 
 const container = document.querySelector(".container");
 const libGrid = document.querySelector(".lib-grid");
+const addCard = document.querySelector(".add-card");
 
 const createCard = (curbook) => {
     const card = document.createElement("div")
@@ -101,7 +102,13 @@ const createCard = (curbook) => {
     isread.textContent = `Completed: ${curbook.read}`;
     card.appendChild(isread);
 
-    libGrid.appendChild(card);
+    libGrid.insertBefore(card, addCard);
+}
+
+book1.read = false;
+
+const inputBook = () => {
+
 }
 
 library.displayBooks();
