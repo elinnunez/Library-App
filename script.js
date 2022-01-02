@@ -78,6 +78,13 @@ const container = document.querySelector(".container");
 const libGrid = document.querySelector(".lib-grid");
 const addCard = document.querySelector(".add-card");
 
+const addBookBtn = document.querySelector(".add-book");
+const formModal = document.querySelector(".popup");
+
+addBookBtn.addEventListener("click", (e) => {
+    formModal.style.display = "block";
+})
+
 const createCard = (curbook) => {
     const card = document.createElement("div")
     card.classList.add("book-card");

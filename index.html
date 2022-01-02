@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
     <title>Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>My Library</h1>
+      <h1>My Library</h1>
     </header>
     <div class="container">
-        <button class="add-book">Add Book</button>
-         <div class="lib-grid">
-            <div class="book-card">Book Card 1</div>
-            <!-- <div class="book-card">Book Card 2</div> -->
-            <!-- <div class="book-card">Book Card 3</div> -->
-            <div class="add-card"><i class="fas fa-plus" style="color:rgb(60, 146, 142)"></i></div>
+      <button class="add-book">Add Book</button>
+      <div class="lib-grid">
+        <div class="book-card">Book Card 1</div>
+        <!-- <div class="book-card">Book Card 2</div> -->
+        <!-- <div class="book-card">Book Card 3</div> -->
+        <div class="add-card">
+          <i class="fas fa-plus" style="color: rgb(60, 146, 142)"></i>
         </div>
+      </div>
     </div>
     <div class="popup">
-        <form action="" class="book-form">
-            <ul>
-                <li>
-                    <label for="title">Book Title:</label>
-                    <input type="text" id="title">
-                </li>
-                <li>
-                    <label for="author">Author:</label>
-                    <input type="text" id="author">
-                </li>
-                <li>
-                    <label for="pages">Pages:</label>
-                    <input type="number" id="pages">
-                </li>
-                <li>
-                    <label for="pages">Pages:</label>
-                    <input type="number" id="pages">
-                </li>
-                <li>
-                    <label for="read">Read Status:</label>
-                    <input type="checkbox" name="read" id="read">
-                </li>
-            </ul>
-        </form>
+      <div class="mod-close">
+        <!-- <a id="modal_close" href="#">close <b>X</b></a> -->
+        <button class="modal_close"><b>X</b></b></button>
+      </div>
+      <form action="" class="book-form">
+        <label for="title">Book Title</label>
+        <input type="text" id="title" />
+
+        <label for="author">Author</label>
+        <input type="text" id="author" />
+
+        <label for="pages">Pages</label>
+        <input type="number" id="pages" />
+
+        <!-- <label for="read">Status</label> -->
+        <input type="button" value="Unread">
+        <input type="submit" value="Submit">
+      </form>
     </div>
 
-<script src="script.js"></script>
-</body>
-</html>      
+    <script src="script.js"></script>
+  </body>
+</html>
