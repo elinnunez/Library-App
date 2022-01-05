@@ -57,6 +57,7 @@ header {
   border: 1px solid blue;
   width: 50%;
   display: none;
+  /* display: block; */
   position: absolute;
   text-align: center;
   left: 50%;
@@ -99,6 +100,21 @@ input[type="button"] {
     /* margin-left: auto; */
     /* margin-right: auto; */
     background-color: #f07171;
+    /* border: 3px solid black; */
+}
+
+.toggle-read {
+  /* border: 3px solid black; */
+  background-color: #f07171;
+  align-items: center;
+  width: 40%;
+  color: white;
+  padding: 14px 20px;
+  /* margin: 8px 0; */
+  /* border: none; */
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 auto;
 }
 
 input[type="submit"]:hover {

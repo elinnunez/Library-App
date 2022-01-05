@@ -80,9 +80,61 @@ const addCard = document.querySelector(".add-card");
 
 const addBookBtn = document.querySelector(".add-book");
 const formModal = document.querySelector(".popup");
+const form = document.querySelector("form");
+const closeFormBtn = document.querySelector(".modal_close");
+const toggleRead = document.querySelector(".toggle-read");
 
-addBookBtn.addEventListener("click", (e) => {
+const resetForm = () => {
+    for(let i = 0; i < 3; i++) {
+        form.elements[i].value = "";
+    }
+    form.elements[3].value = "Unread";
+    toggleRead.style.backgroundColor = "#f07171";
+}
+
+form.addEventListener("submit", (e) => {
+    let values = [];
+    for(let i = 0; i < form.elements.length -1; i++) {
+        values.push(form.elements[i].value);
+    }
+
+    resetForm();
+
+    if(values[3] === "Unread") {
+        values[3] = false;
+    } else {
+        values[3] = true;
+    }
+
+    let newbook = new Book(values[0], values[1], values[2], values[3]);
+    createCard(newbook);
+    formModal.style.display = "none";
+    e.preventDefault();
+});
+
+addBookBtn.addEventListener("click", () => {
     formModal.style.display = "block";
+})
+
+closeFormBtn.addEventListener("click", (e) => {
+    resetForm();
+    formModal.style.display = "none";
+});
+
+toggleRead.addEventListener("click", (e) => {
+    // let curVal = e.target.textContent;
+    let curval = e.target.value;
+    console.log(curval);
+
+    if(curval === "Unread") {
+        e.target.value = "Read";
+        e.target.style.backgroundColor = "#4caf50";
+    } else if (curval === "Read") {
+        e.target.value = "Unread";
+        e.target.style.backgroundColor = "#f07171";
+    }
+
+    e.preventDefault();
 })
 
 const createCard = (curbook) => {
