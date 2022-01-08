@@ -29,7 +29,6 @@ class Library {
         this.lib = this.lib.filter((book) => {
             return book.title.toLowerCase() !== curbook.title.toLowerCase();
         });
-        libGrid.innerHTML = "";
         console.log(this.lib);
     }
 
@@ -84,6 +83,9 @@ const form = document.querySelector("form");
 const closeFormBtn = document.querySelector(".modal_close");
 const toggleRead = document.querySelector(".toggle-read");
 
+
+// Form Functionality
+
 const resetForm = () => {
     for(let i = 0; i < 3; i++) {
         form.elements[i].value = "";
@@ -116,6 +118,10 @@ addBookBtn.addEventListener("click", () => {
     formModal.style.display = "block";
 })
 
+addCard.addEventListener("click", () => {
+    formModal.style.display = "block";
+})
+
 closeFormBtn.addEventListener("click", (e) => {
     resetForm();
     formModal.style.display = "none";
@@ -136,6 +142,8 @@ toggleRead.addEventListener("click", (e) => {
 
     e.preventDefault();
 })
+
+
 
 const createCard = (curbook) => {
     const card = document.createElement("div")
@@ -160,6 +168,32 @@ const createCard = (curbook) => {
     isread.classList.add("book-read");
     isread.textContent = `Completed: ${curbook.read}`;
     card.appendChild(isread);
+
+    const isreadBtn = document.createElement("button");
+    isreadBtn.classList.add("book-read");
+
+    if(curbook.read) {
+        isreadBtn.textContent = "Completed";
+    } else {
+        isreadBtn.textContent = "Incomplete";
+    }
+    card.appendChild(isreadBtn);
+
+    const rmBtn = document.createElement("button");
+    rmBtn.classList.add("rm-card");
+    rmBtn.textContent = "REMOVE";
+    rmBtn.addEventListener("click", (e) => {
+        let curCard = e.target.parentNode;
+        let parentGrid = e.target.parentNode.parentNode;
+        // console.log(parentGrid);
+        let bChIndex = Array.from(parentGrid.children).indexOf(curCard);
+        // console.log(bChIndex);
+        library.deleteBook(library.lib[bChIndex]);
+        
+        e.target.parentNode.parentNode.removeChild(curCard);
+    });
+
+    card.appendChild(rmBtn);
 
     libGrid.insertBefore(card, addCard);
 }
