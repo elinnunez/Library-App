@@ -18,7 +18,7 @@ class Library {
 
   addBook(book) {
     if (this.isInLib(book)) {
-      console.log(`Book: ${book.title} already in library`);
+    //   console.log(`Book: ${book.title} already in library`);
       return;
     } else {
       this.lib.push(book);
@@ -29,7 +29,7 @@ class Library {
     this.lib = this.lib.filter((book) => {
       return book.title.toLowerCase() !== curbook.title.toLowerCase();
     });
-    console.log(this.lib);
+    // console.log(this.lib);
   }
 
   displayBooks() {
@@ -67,8 +67,8 @@ library.addBook(book3);
 // library.addBook(book5);
 // library.addBook(book6);
 
-console.log(library.returnLib());
-console.log(library);
+// console.log(library.returnLib());
+// console.log(library);
 
 // console.log(library.isInLib(book1));
 // console.log(library.isInLib(book3));
@@ -120,8 +120,8 @@ form.addEventListener("submit", (e) => {
     createCard(newbook);
   }
 
-  console.log(values);
-  console.log(library.lib);
+//   console.log(values);
+//   console.log(library.lib);
 
   formModal.style.display = "none";
   e.preventDefault();
@@ -142,7 +142,7 @@ closeFormBtn.addEventListener("click", (e) => {
 
 toggleRead.addEventListener("click", (e) => {
   let curval = e.target.value;
-  console.log(curval);
+//   console.log(curval);
 
   if (curval === "Unread") {
     e.target.value = "Read";
