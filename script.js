@@ -18,7 +18,7 @@ class Library {
 
   addBook(book) {
     if (this.isInLib(book)) {
-    //   console.log(`Book: ${book.title} already in library`);
+      // console.log(`Book: ${book.title} already in library`);
       return;
     } else {
       this.lib.push(book);
@@ -107,10 +107,10 @@ form.addEventListener("submit", (e) => {
     values[3] = true;
   }
 
-  for(let i = 0; i < values.length; i++) {
-      if(values[i] == "") {
-          values[i] = "N/A";
-      }
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] == "") {
+      values[i] = "N/A";
+    }
   }
 
   let newbook = new Book(values[0], values[1], values[2], values[3]);
@@ -120,8 +120,8 @@ form.addEventListener("submit", (e) => {
     createCard(newbook);
   }
 
-//   console.log(values);
-//   console.log(library.lib);
+  //   console.log(values);
+  //   console.log(library.lib);
 
   formModal.style.display = "none";
   e.preventDefault();
@@ -142,7 +142,7 @@ closeFormBtn.addEventListener("click", (e) => {
 
 toggleRead.addEventListener("click", (e) => {
   let curval = e.target.value;
-//   console.log(curval);
+  //   console.log(curval);
 
   if (curval === "Unread") {
     e.target.value = "Read";
@@ -174,7 +174,6 @@ const createCard = (curbook) => {
   pages.textContent = `Pages: ${curbook.pages}`;
   card.appendChild(pages);
 
-
   const isreadBtn = document.createElement("button");
   isreadBtn.classList.add("book-read");
 
@@ -184,18 +183,18 @@ const createCard = (curbook) => {
   } else {
     isreadBtn.textContent = "Incomplete";
     isreadBtn.style.backgroundColor = "rgb(238, 183, 176)";
-  };
+  }
 
   isreadBtn.addEventListener("click", (e) => {
-      if(curbook.read === true) {
-          isreadBtn.textContent = "Incomplete";
-          curbook.read = false;
-          isreadBtn.style.backgroundColor = "rgb(238, 183, 176)";
-      } else {
-          isreadBtn.textContent = "Completed";
-          curbook.read = true;
-          isreadBtn.style.backgroundColor = "rgb(176, 238, 190)";
-      };
+    if (curbook.read === true) {
+      isreadBtn.textContent = "Incomplete";
+      curbook.read = false;
+      isreadBtn.style.backgroundColor = "rgb(238, 183, 176)";
+    } else {
+      isreadBtn.textContent = "Completed";
+      curbook.read = true;
+      isreadBtn.style.backgroundColor = "rgb(176, 238, 190)";
+    }
   });
 
   card.appendChild(isreadBtn);
