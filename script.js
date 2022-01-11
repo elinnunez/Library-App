@@ -67,12 +67,6 @@ library.addBook(book3);
 // library.addBook(book5);
 // library.addBook(book6);
 
-// console.log(library.returnLib());
-// console.log(library);
-
-// console.log(library.isInLib(book1));
-// console.log(library.isInLib(book3));
-
 const container = document.querySelector(".container");
 const libGrid = document.querySelector(".lib-grid");
 const addCard = document.querySelector(".add-card");
@@ -177,7 +171,7 @@ const createCard = (curbook) => {
   const isreadBtn = document.createElement("button");
   isreadBtn.classList.add("book-read");
 
-  if (curbook.read) {
+  if (curbook.read === true) {
     isreadBtn.textContent = "Completed";
     isreadBtn.style.backgroundColor = "rgb(176, 238, 190)";
   } else {
@@ -218,12 +212,4 @@ const createCard = (curbook) => {
   libGrid.insertBefore(card, addCard);
 };
 
-book1.read = false;
-
-// const inputBook = () => {
-
-// }
-
 library.displayBooks();
-// library.deleteBook(book2);
-// library.displayBooks();
